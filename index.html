@@ -3,26 +3,829 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Campanha Promocional do Mês da Mulher | Áurea Wealth + Camila Pastro</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.5.ico">
-
+  <meta name="description" content="Combo exclusivo de Consultoria Financeira Express + Análise de Coloração Pessoal. Transforme sua vida financeira e sua imagem por apenas R$ 350 até 31/03. Parceria Áurea Finanças + Camila Pastro.">
+  <meta name="keywords" content="consultoria financeira, análise de coloração, mês da mulher, investimento pessoal, áurea finanças, camila pastro">
+  <meta property="og:title" content="Combo Mulher em Equilíbrio | Áurea Finanças + Camila Pastro">
+  <meta property="og:description" content="Consultoria Financeira + Análise de Coloração por R$ 350. Últimos dias!">
+  <meta property="og:type" content="website">
+  
+  <title>Combo Mulher em Equilíbrio | Áurea Finanças + Camila Pastro</title>
+  
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
   <style>
-    html, body {
+    :root {
+      --dourado: #C9A227;
+      --dourado-escuro: #B8860B;
+      --terracota: #E07A5F;
+      --terracota-escuro: #D4756F;
+      --rosa-antigo: #D4A5A5;
+      --verde-musgo: #2E5C4F;
+      --off-white: #FAF8F5;
+      --creme: #F5F5DC;
+      --cinza-chumbo: #4A4A4A;
+      --preto-suave: #2C2C2C;
+    }
+    
+    * {
       margin: 0;
       padding: 0;
-      height: 100%;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--off-white);
+      color: var(--cinza-chumbo);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--preto-suave);
+      font-weight: 600;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--off-white) 0%, var(--creme) 100%);
+      position: relative;
       overflow: hidden;
     }
-    iframe {
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201, 162, 39, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(224, 122, 95, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    
+    .badge-parceria {
+      display: inline-block;
+      background: var(--dourado);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--preto-suave);
+    }
+    
+    .hero h1 span {
+      color: var(--terracota);
+      font-style: italic;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--cinza-chumbo);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+    
+    .hero-preco {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      margin: 2rem 0;
+      display: inline-block;
+    }
+    
+    .preco-original {
+      font-size: 1.5rem;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 0.5rem;
+    }
+    
+    .preco-promo {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--terracota);
+      line-height: 1;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .preco-promo small {
+      font-size: 1.5rem;
+      display: block;
+      color: var(--cinza-chumbo);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+    }
+    
+    .economia {
+      background: var(--verde-musgo);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    
+    .urgencia {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--terracota-escuro);
+      font-weight: 600;
+    }
+    
+    .btn-principal {
+      display: inline-block;
+      background: var(--terracota);
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(224, 122, 95, 0.3);
+    }
+    
+    .btn-principal:hover {
+      background: var(--terracota-escuro);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(224, 122, 95, 0.4);
+    }
+    
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+    
+    /* Parceiras Section */
+    .parceiras {
+      padding: 5rem 2rem;
+      background: white;
+      text-align: center;
+    }
+    
+    .parceiras h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--preto-suave);
+    }
+    
+    .parceiras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    
+    .parceira-card {
+      padding: 2rem;
+    }
+    
+    .parceira-logo {
+      width: 150px;
+      height: 150px;
+      background: var(--off-white);
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--dourado);
+      border: 3px solid var(--dourado);
+    }
+    
+    .parceira-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--preto-suave);
+    }
+    
+    .parceira-card p {
+      color: var(--cinza-chumbo);
+      font-size: 0.95rem;
+    }
+    
+    .mais-icon {
+      font-size: 3rem;
+      color: var(--dourado);
+      font-weight: 300;
+    }
+    
+    /* O Que Você Leva Section */
+    .oferta {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--verde-musgo) 0%, #1a3d33 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .oferta h2 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    .oferta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .oferta-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .oferta-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .oferta-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .oferta-card h3 {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .oferta-card ul {
+      list-style: none;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+    
+    .oferta-card li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .oferta-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--dourado);
+      font-weight: bold;
+    }
+    
+    /* Gamma Embed Section */
+    .gamma-section {
+      padding: 5rem 2rem;
+      background: var(--off-white);
+      text-align: center;
+    }
+    
+    .gamma-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .gamma-section p {
+      color: var(--cinza-chumbo);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .gamma-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    
+    .gamma-iframe {
       width: 100%;
-      height: 100%;
+      height: 500px;
       border: none;
+      border-radius: 12px;
+    }
+    
+    /* Para Quem É Section */
+    .publico {
+      padding: 5rem 2rem;
+      background: white;
+      text-align: center;
+    }
+    
+    .publico h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    .publico-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .publico-item {
+      padding: 2rem;
+      background: var(--off-white);
+      border-radius: 15px;
+      text-align: left;
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--dourado);
+    }
+    
+    .publico-item:hover {
+      transform: translateX(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .publico-item::before {
+      content: '✓';
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: var(--dourado);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    
+    .publico-item h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    /* CTA Final Section */
+    .cta-final {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--terracota) 0%, var(--terracota-escuro) 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cta-final h2 {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-final p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+    
+    .btn-cta {
+      display: inline-block;
+      background: white;
+      color: var(--terracota);
+      padding: 1.3rem 4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    
+    .seguranca {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--preto-suave);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-logo {
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+    
+    .footer-logo:hover {
+      opacity: 1;
+    }
+    
+    .social-links {
+      margin: 2rem 0;
+    }
+    
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    
+    .social-links a:hover {
+      opacity: 1;
+    }
+    
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .preco-promo {
+        font-size: 3rem;
+      }
+      
+      .gamma-iframe {
+        height: 400px;
+      }
+      
+      .parceiras-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .mais-icon {
+        transform: rotate(90deg);
+      }
+    }
+    
+    /* Sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      z-index: 1000;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .sticky-cta.visible {
+      transform: translateY(0);
+    }
+    
+    .sticky-cta span {
+      font-weight: 600;
+      color: var(--preto-suave);
+    }
+    
+    .sticky-cta .btn-mini {
+      background: var(--terracota);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 600px) {
+      .sticky-cta span {
+        font-size: 0.9rem;
+      }
+      .sticky-cta .btn-mini {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
 <body>
-  <iframe src="https://gamma.app/embed/brke9ejq552aopv" allow="fullscreen" title="O que sua imagem e suas finanças têm em comum?"></iframe>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge-parceria">Últimos dias - Mês da Mulher</div>
+      <h1>Investir em Você: <span>O Melhor ROI</span></h1>
+      <p class="hero-subtitle">Consultoria Financeira Express + Análise de Coloração Pessoal</p>
+      
+      <div class="hero-preco">
+        <div class="preco-original">De R$ 1.500</div>
+        <div class="preco-promo">
+          R$ 350
+          <small>até 31 de março</small>
+        </div>
+        <div class="economia">Economize R$ 1.150 (77% OFF)</div>
+      </div>
+      
+      <p class="urgencia">⚡ Execução em abril - você escolhe a data</p>
+      
+      <a href="#contato" class="btn-principal">Quero Garantir Minha Vaga</a>
+    </div>
+    
+    <div class="scroll-indicator">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Parceiras Section -->
+  <section class="parceiras">
+    <h2>Uma Parceria Estratégica</h2>
+    <div class="parceiras-grid">
+      <div class="parceira-card">
+        <div class="parceira-logo">Áurea</div>
+        <h3>Áurea Finanças Estratégicas</h3>
+        <p>Estratégia para seu dinheiro. Identificamos gargalos financeiros e projetamos melhorias reais para escalar seus lucros com segurança.</p>
+      </div>
+      
+      <div class="mais-icon">+</div>
+      
+      <div class="parceira-card">
+        <div class="parceira-logo" style="border-color: var(--terracota); color: var(--terracota);">CP</div>
+        <h3>Camila Pastro</h3>
+        <p>Estratégia para sua imagem. Consultoria em comportamento, imagem e comunicação para construir presenças autênticas que geram resultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O Que Você Leva Section -->
+  <section class="oferta">
+    <h2>O Que Você Leva Neste Combo</h2>
+    <div class="oferta-grid">
+      <div class="oferta-card">
+        <div class="oferta-icon">💰</div>
+        <h3>Consultoria Financeira Express</h3>
+        <p>60 minutos de análise estratégica</p>
+        <ul>
+          <li>Diagnóstico completo da sua saúde financeira</li>
+          <li>Identificação de gargalos e desperdícios</li>
+          <li>Plano de ação personalizado para escalar lucros</li>
+          <li>Metas claras e atingíveis para abril</li>
+        </ul>
+      </div>
+      
+      <div class="oferta-card">
+        <div class="oferta-icon">🎨</div>
+        <h3>Análise de Coloração Pessoal</h3>
+        <p>60 minutos de descoberta da sua paleta ideal</p>
+        <ul>
+          <li>Identificação das cores que realçam sua pele, olhos e cabelo</li>
+          <li>Guia prático para compras assertivas</li>
+          <li>Orientação sobre como usar cores no ambiente corporativo</li>
+          <li>Autoconfiança visual para fechar mais negócios</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gamma Embed Section -->
+  <section class="gamma-section">
+    <h2>Conheça Todos os Detalhes</h2>
+    <p>Arraste para navegar pela apresentação completa da nossa parceria e entenda como essa transformação funciona na prática.</p>
+    
+    <div class="gamma-container">
+      <iframe 
+        src="https://gamma.app/embed/brke9ejq552aopv" 
+        class="gamma-iframe"
+        allow="fullscreen" 
+        title="O que sua imagem e suas finanças têm em comum?">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Para Quem É Section -->
+  <section class="publico">
+    <h2>Esse Combo é Para Você Se:</h2>
+    <div class="publico-grid">
+      <div class="publico-item">
+        <h4>Quer subir na carreira</h4>
+        <p>Sente que sua imagem atual não reflete seu potencial profissional</p>
+      </div>
+      
+      <div class="publico-item">
+        <h4>Gasta sem ver resultado</h4>
+        <p>Faz compras por impulso e depois se arrepende financeiramente</p>
+      </div>
+      
+      <div class="publico-item">
+        <h4>Armário cheio, nada para vestir</h4>
+        <p>Compra roupas que não usa porque não sabe o que valoriza seu tom de pele</p>
+      </div>
+      
+      <div class="publico-item">
+        <h4>Está em transição</h4>
+        <p>Mudando de emprego, voltando ao mercado ou empreendendo</p>
+      </div>
+      
+      <div class="publico-item">
+        <h4>Quer começar abril diferente</h4>
+        <p>Busca clareza financeira e autoconfiança visual para um novo ciclo</p>
+      </div>
+      
+      <div class="publico-item">
+        <h4>Valoriza investimento em si</h4>
+        <p>Entende que desenvolvimento pessoal é o melhor ROI</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final Section -->
+  <section class="cta-final" id="contato">
+    <div class="cta-content">
+      <h2>O Mês da Mulher Termina.<br>Seu Protagonismo Continua.</h2>
+      <p>Garanta seu combo por apenas <strong>R$ 350</strong> até 31 de março.<br>Vagas limitadas para execução em abril.</p>
+      
+      <a href="https://wa.me/SEUNUMERO?text=Olá! Tenho interesse no Combo Mulher em Equilíbrio (Consultoria Financeira + Análise de Coloração)" class="btn-cta" target="_blank">
+        Quero Me Transformar
+      </a>
+      
+      <p class="seguranca">🔒 Pagamento seguro • Execução em abril • Data flexível</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logos">
+        <div class="footer-logo">Áurea Finanças</div>
+        <div class="footer-logo">Camila Pastro</div>
+      </div>
+      
+      <div class="social-links">
+        <a href="https://instagram.com/aureafinancas" target="_blank">Instagram Áurea</a>
+        <a href="https://instagram.com/camilapastro" target="_blank">Instagram Camila</a>
+        <a href="https://aureafinancas.com.br" target="_blank">Site Áurea</a>
+        <a href="https://camilapastro.com.br" target="_blank">Site Camila</a>
+      </div>
+      
+      <p style="opacity: 0.6; font-size: 0.9rem;">
+        © 2026 Combo Mulher em Equilíbrio. Todos os direitos reservados.<br>
+        Campanha válida até 31/03/2026 ou enquanto durarem as vagas.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <span>Combo por R$ 350</span>
+    <a href="#contato" class="btn-mini">Garantir Agora</a>
+  </div>
+
+  <script>
+    // Mostrar sticky CTA após scroll
+    window.addEventListener('scroll', function() {
+      const sticky = document.getElementById('stickyCta');
+      if (window.scrollY > 500) {
+        sticky.classList.add('visible');
+      } else {
+        sticky.classList.remove('visible');
+      }
+    });
+    
+    // Smooth scroll para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Contador regressivo simples (opcional - pode remover se não quiser)
+    const hoje = new Date();
+    const limite = new Date('2026-03-31');
+    const diff = limite - hoje;
+    const dias = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    
+    if (dias > 0 && dias <= 10) {
+      const urgencia = document.querySelector('.urgencia');
+      urgencia.innerHTML = `⏰ Faltam apenas ${dias} dias! Execução em abril - você escolhe a data`;
+    }
+  </script>
+
 </body>
 </html>
